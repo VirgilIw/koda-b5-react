@@ -2,12 +2,7 @@ const FormProducts = ({ setDatas }) => {
   const handleProductForm = (e) => {
     e.preventDefault();
 
-    const newProducts = {
-      name: e.target["product-name"].value,
-      name1: e.target["product-name"].value,
-      name2: e.target["product-name"].value,
-      name3: e.target["product-name"].value,
-    };
+    const newProducts = {};
     //
     Object.assign(newProducts, { name: e.target["product-name"].value });
     Object.assign(newProducts, {
