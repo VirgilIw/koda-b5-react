@@ -1,4 +1,4 @@
-import CardRow from "./CardRow";
+import CardProducts from "./CardProducts";
 
 const ShowTableProducts = (props) => {
   const { datas } = props;
@@ -15,7 +15,7 @@ const ShowTableProducts = (props) => {
       <tbody>
         {datas.map((data, idx) => {
           return (
-            <CardRow
+            <CardProducts
               key={idx}
               name={data.name}
               price={data.price}

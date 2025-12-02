@@ -14,6 +14,7 @@ const FormProducts = ({ setDatas }) => {
     //
     setDatas((datas) => {
       return [...datas, newProducts];
+      // data sebelumnya menjadi data dari inputan user
     });
     //
     e.target["product-name"].value = "";

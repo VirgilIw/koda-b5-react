@@ -1,4 +1,4 @@
-const CardRow = ({ name, quantity, price, status }) => {
+const CardProducts = ({ name, quantity, price, status }) => {
   return (
     <>
       <tr>
@@ -11,4 +11,4 @@ const CardRow = ({ name, quantity, price, status }) => {
   );
 };
 
-export default CardRow;
+export default CardProducts;
