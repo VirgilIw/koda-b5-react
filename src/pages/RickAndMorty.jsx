@@ -20,7 +20,7 @@ const RickAndMorty = () => {
         const datas = await response.json();
         // console.log(datas.results);
 
-        const mapRick = datas.results.slice(0, 16).map((rick) => {
+        const mapRick = datas.results.map((rick) => {
           return {
             img: rick.image,
             name: rick.name,
