@@ -6,6 +6,8 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import FormReview from "./pages/FormReview";
+import Minitask7 from "./pages/Minitask7";
+import Detail from "./pages/Detail";
 
 const Router = () => {
   return (
@@ -14,7 +16,12 @@ const Router = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/form-review" element={<FormReview />} />
-      {/* RUte catch ALl */}
+
+      <Route path="/character">
+        <Route index element={<Minitask7 />} />
+        <Route path=":id" element={<Detail />} />
+      </Route>
+
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
