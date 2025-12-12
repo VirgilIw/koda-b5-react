@@ -11,10 +11,10 @@ const Detail = () => {
       const response = await fetch(urlParams);
       const datas = await response.json();
       console.log(datas);
-
       setDetail(datas);
     })();
   }, []);
+  //
   return (
     <>
       <section className="w-50 text-center mx-auto h-screen">

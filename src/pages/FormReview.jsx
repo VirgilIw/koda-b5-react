@@ -3,31 +3,23 @@ import Footer from "../components/Footer";
 import Heading from "../components/Heading";
 
 const FormReview = () => {
-  const [reviews, setReviews] = React.useState([]);
+  const [reviews, setReviews] = React.useState(() => {
+    return JSON.parse(localStorage.getItem("reviews")) || [];
+  });
 
   React.useEffect(() => {
-    const getData = window.localStorage.getItem("reviews"); // ambil data dari localstorage
-    //
-    if (getData) {
-      const parseData = JSON.parse(getData); // ubah jadi objek karna sebelumnya string
-      setReviews(parseData); // masukin data ke state
-    }
-  }, []);
+    window.localStorage.setItem("reviews", JSON.stringify(reviews));
+    // masukan data ke localstorage
+  }, [reviews]);
   //
-
   const handleReview = (e) => {
     e.preventDefault();
-
     const newReview = e.target.review.value;
-
-    let updateDataReview;
-
+    if (!newReview.trim()) return;
+    let updateDataReview; // variable kosong untuk masukan data input user ke state
     // data sebelumnya dimasukin berdasarkan inputan user
-    updateDataReview = [...reviews, newReview];
-
+    updateDataReview = [...reviews, newReview]; // spread operator
     setReviews(updateDataReview); // masukan inputan user melalui setter state
-    window.localStorage.setItem("reviews", JSON.stringify(updateDataReview)); // masukan data ke localstorage
-
     e.target.review.value = ""; // kosongkan value setelah di submit
   };
 

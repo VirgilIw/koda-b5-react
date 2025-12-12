@@ -41,7 +41,7 @@ const Minitask7 = () => {
     setSearch(""); // <-- reset search
   };
 
-  // 🔥 FILTER SEARCH (tidak fetch ulang, hanya filter array)
+  // FILTER SEARCH (tidak fetch ulang, hanya filter array)
   const filteredData = dataRick.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -80,7 +80,11 @@ const Minitask7 = () => {
         <div className="grid grid-cols-4 gap-4">
           {filteredData.map((item) => (
             <Link to={`/character/${item.id}`} key={item.id}>
-              <img src={item.image} alt={item.name} className="rounded-md" />
+              <img
+                src={item.image}
+                alt={item.name}
+                className="rounded-md cursor-pointer"
+              />
               <p>{item.name}</p>
             </Link>
           ))}
