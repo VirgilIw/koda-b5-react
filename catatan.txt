@@ -1,0 +1,37 @@
+✅ Kapan useSearchParams dipakai?
+
+✅ Filter (status, sort, page)
+✅ Search / keyword
+✅ Pagination
+
+Fungsi-Fungsi URLSearchParams
+const params = new URLSearchParams("?page=2&keyword=jaket");
+
+
+1️⃣ get(key) → mengambil nilai param
+
+set(key, value) → menimpa / membuat param
+params.set("page", 5);
+params.toString(); // "page=5&keyword=jaket"
+
+
+//
+set(name, value) → mengganti / membuat param
+params.set("page", 3);
+
+Hasilnya nanti di URL jadi:
+?page=3&keyword=jaket
+
+6️⃣ toString() → menghasilkan query string
+params.toString(); // "page=2&keyword=jaket"
+
+//
+📌 Jadi urutan lengkapnya begini:
+
+User klik <option>
+Ambil value → (phone, laptop, dll)
+Masukkan ke query params → ?category=laptop
+React re-render otomatis
+Ambil ulang query param → searchParams.get("category")
+Lakukan filter data
+Tampilkan hasilnya (UI terupdate)

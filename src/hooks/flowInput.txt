@@ -1,0 +1,2 @@
+1. value state
+2. onChange handler
